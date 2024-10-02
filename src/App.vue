@@ -1,88 +1,20 @@
 <script setup>
 import Menubar from "primevue/menubar";
-import { ref } from "vue";
-
-const items = ref([
-  {
-    label: "Home",
-    icon: "pi pi-home",
-  },
-  {
-    label: "Features",
-    icon: "pi pi-star",
-  },
-  {
-    label: "Projects",
-    icon: "pi pi-search",
-    items: [
-      {
-        label: "Components",
-        icon: "pi pi-bolt",
-      },
-      {
-        label: "Blocks",
-        icon: "pi pi-server",
-      },
-      {
-        label: "UI Kit",
-        icon: "pi pi-pencil",
-      },
-      {
-        label: "Templates",
-        icon: "pi pi-palette",
-        items: [
-          {
-            label: "Apollo",
-            icon: "pi pi-palette",
-          },
-          {
-            label: "Ultima",
-            icon: "pi pi-palette",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Contact",
-    icon: "pi pi-envelope",
-  },
-]);
+import routes from "./routers/routers";
 </script>
 
 <template>
-  <Menubar :model="items" />
-  <div class="flex lg:flex-row flex-col gap-4 bg-surface-0 dark:bg-surface-900">
-    <div class="flex-1 flex items-center justify-center">
-      <div class="p-6 pt-12 lg:p-12">
-        <h1
-          class="text-3xl lg:text-5xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left"
-        >
-          Create the screens your <br /><span
-            class="text-blue-500 dark:text-blue-400"
-            >visitors deserve to see</span
-          >
-        </h1>
-        <p
-          class="text-surface-700 dark:text-surface-200 leading-normal mb-8 text-center lg:text-left"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <div class="flex items-center justify-center lg:justify-start gap-6">
-          <Button label="Learn More" type="button" />
-          <Button label="Live Demo" type="button" outlined />
-        </div>
-      </div>
-    </div>
-    <div class="flex-1 overflow-hidden">
-      <img
-        src="https://fqjltiegiezfetthbags.supabase.co/storage/v1/render/image/public/block.images/blocks/hero/hero-1.png"
-        alt="hero-1"
-        class="h-full w-full object-cover lg:[clip-path:polygon(12%_0,100%_0%,100%_100%,0_100%)]"
-      />
-    </div>
-  </div>
+  <Menubar :model="routes">
+    <template #item="{ item, props }">
+      <router-link v-slot="{ href, navigate }" :to="item.path" custom>
+        <a v-ripple :href="href" v-bind="props.action" @click="navigate">
+          <span :class="item.icon" />
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </router-link>
+    </template>
+  </Menubar>
+  <router-view />
 </template>
 
 <style scoped></style>
