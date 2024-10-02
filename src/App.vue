@@ -1,132 +1,88 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Menubar from 'primevue/menubar'
-import { ref } from 'vue'
+import Menubar from "primevue/menubar";
+import { ref } from "vue";
 
 const items = ref([
   {
-    label: 'Home',
-    icon: 'pi pi-home'
+    label: "Home",
+    icon: "pi pi-home",
   },
   {
-    label: 'Features',
-    icon: 'pi pi-star'
+    label: "Features",
+    icon: "pi pi-star",
   },
   {
-    label: 'Projects',
-    icon: 'pi pi-search',
+    label: "Projects",
+    icon: "pi pi-search",
     items: [
       {
-        label: 'Components',
-        icon: 'pi pi-bolt'
+        label: "Components",
+        icon: "pi pi-bolt",
       },
       {
-        label: 'Blocks',
-        icon: 'pi pi-server'
+        label: "Blocks",
+        icon: "pi pi-server",
       },
       {
-        label: 'UI Kit',
-        icon: 'pi pi-pencil'
+        label: "UI Kit",
+        icon: "pi pi-pencil",
       },
       {
-        label: 'Templates',
-        icon: 'pi pi-palette',
+        label: "Templates",
+        icon: "pi pi-palette",
         items: [
           {
-            label: 'Apollo',
-            icon: 'pi pi-palette'
+            label: "Apollo",
+            icon: "pi pi-palette",
           },
           {
-            label: 'Ultima',
-            icon: 'pi pi-palette'
-          }
-        ]
-      }
-    ]
+            label: "Ultima",
+            icon: "pi pi-palette",
+          },
+        ],
+      },
+    ],
   },
   {
-    label: 'Contact',
-    icon: 'pi pi-envelope'
-  }
-])
+    label: "Contact",
+    icon: "pi pi-envelope",
+  },
+]);
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <Menubar :model="items" />
-      </nav>
+  <Menubar :model="items" />
+  <div class="flex lg:flex-row flex-col gap-4 bg-surface-0 dark:bg-surface-900">
+    <div class="flex-1 flex items-center justify-center">
+      <div class="p-6 pt-12 lg:p-12">
+        <h1
+          class="text-3xl lg:text-5xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left"
+        >
+          Create the screens your <br /><span
+            class="text-blue-500 dark:text-blue-400"
+            >visitors deserve to see</span
+          >
+        </h1>
+        <p
+          class="text-surface-700 dark:text-surface-200 leading-normal mb-8 text-center lg:text-left"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div class="flex items-center justify-center lg:justify-start gap-6">
+          <Button label="Learn More" type="button" />
+          <Button label="Live Demo" type="button" outlined />
+        </div>
+      </div>
     </div>
-  </header>
-
-  <RouterView />
+    <div class="flex-1 overflow-hidden">
+      <img
+        src="https://fqjltiegiezfetthbags.supabase.co/storage/v1/render/image/public/block.images/blocks/hero/hero-1.png"
+        alt="hero-1"
+        class="h-full w-full object-cover lg:[clip-path:polygon(12%_0,100%_0%,100%_100%,0_100%)]"
+      />
+    </div>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped></style>
