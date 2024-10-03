@@ -82,19 +82,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@media screen and (max-width: 960px) {
-  ::v-deep .customized-timeline .p-timeline-event:nth-child(even) {
-    flex-direction: row;
-  }
-  ::v-deep
-    .customized-timeline
-    .p-timeline-event:nth-child(even)
-    .p-timeline-event-content {
-    text-align: left;
-  }
-  ::v-deep .customized-timeline .p-timeline-event-opposite {
-    flex: 0;
-  }
-}
-</style>
+<style></style>
