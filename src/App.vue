@@ -8,7 +8,7 @@ import routes from "./routers/routers";
     <template #item="{ item, props }">
       <router-link v-slot="{ href, navigate }" :to="item.path" custom>
         <a v-ripple :href="href" v-bind="props.action" @click="navigate">
-          <span :class="item.icon" />
+          <span :class="item.icon"></span>
           <span class="ml-2">{{ item.label }}</span>
         </a>
       </router-link>
@@ -17,4 +17,11 @@ import routes from "./routers/routers";
   <router-view />
 </template>
 
-<style scoped></style>
+<style>
+* {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+</style>
