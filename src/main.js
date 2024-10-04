@@ -7,6 +7,8 @@ import Aura from "@primevue/themes/aura";
 import router from "./routers";
 import Button from "primevue/button";
 import Message from "primevue/message";
+import AnimateOnScroll from "primevue/animateonscroll";
+
 const app = createApp(App);
 app.use(router);
 app.use(PrimeVue, {
@@ -16,4 +18,5 @@ app.use(PrimeVue, {
 });
 app.component("Button", Button);
 app.component("Message", Message);
+app.directive("animateonscroll", AnimateOnScroll);
 app.mount("#app");

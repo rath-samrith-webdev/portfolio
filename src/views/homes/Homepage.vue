@@ -3,7 +3,7 @@
     <div class="flex-1 flex items-center justify-center">
       <div class="p-6 pt-12 lg:p-12">
         <h1
-          class="text-3xl lg:text-5xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left"
+          class="text-4xl lg:text-6xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left"
         >
           HELLO, MY NAME IS<br /><span class="text-blue-500 dark:text-blue-400"
             >RATH SAMRITH</span
@@ -29,18 +29,27 @@
       />
     </div>
   </div>
-  <Card>
-    <template #title>
-      <h2 class="text-center">Timeline</h2>
-    </template>
-    <template #content>
-      <TimeLineComp />
-    </template>
-  </Card>
+  <div>
+    <h1
+      class="text-3xl lg:text-4xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center"
+    >
+      Technology
+    </h1>
+    <Technology />
+  </div>
+  <div>
+    <h1
+      class="text-3xl lg:text-4xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center"
+    >
+      MY JOURNEY
+    </h1>
+    <TimeLineComp />
+  </div>
 </template>
 
 <script>
 import TimeLineComp from "../../components/TimeLine.vue";
+import Technology from "../../components/Technology.vue";
 import Card from "primevue/card";
 export default {
   name: "HomePage",
@@ -52,6 +61,7 @@ export default {
   components: {
     TimeLineComp,
     Card,
+    Technology,
   },
   methods: {
     async goToAbout() {
@@ -61,4 +71,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@media screen and (max-width: 960px) {
+  .customized-timeline .p-timeline-event-opposite {
+    flex: 0 !important;
+  }
+  .customized-timeline .p-timeline-event:nth-child(even) {
+    flex-direction: row !important;
+  }
+  .customized-timeline
+    .p-timeline-event:nth-child(even)
+    .p-timeline-event-content {
+    text-align: left !important;
+  }
+}
+</style>
