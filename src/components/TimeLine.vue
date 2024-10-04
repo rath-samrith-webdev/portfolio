@@ -3,14 +3,18 @@
     <Timeline :value="events" align="alternate" class="customized-timeline">
       <template #marker="slotProps">
         <span
+          v-animateonscroll="findIndex(slotProps.item)"
           class="flex w-8 h-8 items-center justify-center text-white rounded-full z-10 shadow-sm"
           :style="{ backgroundColor: slotProps.item.color }"
         >
-          <i :class="slotProps.item.icon"></i>
+          <i
+            v-animateonscroll="findIndex(slotProps.item)"
+            :class="slotProps.item.icon"
+          ></i>
         </span>
       </template>
       <template #content="slotProps">
-        <Card class="mt-4">
+        <Card v-animateonscroll="findIndex(slotProps.item)" class="mt-4">
           <template #title>
             {{ slotProps.item.status }}
           </template>
@@ -79,7 +83,60 @@ export default {
     Timeline,
     Card,
   },
+  methods: {
+    findIndex(item) {
+      if ((this.events.indexOf(item) + 1) % 2 === 0) {
+        return {
+          enterClass: "animate-fadeinright",
+          leaveClass: "animate-fadeoutright",
+        };
+      } else {
+        return {
+          enterClass: "animate-fadeinleft",
+          leaveClass: "animate-fadeoutleft",
+        };
+      }
+    },
+  },
 };
 </script>
 
-<style></style>
+<style scoped>
+@keyframes animate-fadeinright {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-fadeinleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeinright {
+  animation: animate-fadeinright 0.6s forwards;
+}
+
+.animate-fadeinleft {
+  animation: animate-fadeinleft 0.6s forwards;
+}
+
+.animate-fadeoutright {
+  animation: animate-fadeinright 0.6s reverse forwards;
+}
+
+.animate-fadeoutleft {
+  animation: animate-fadeinleft 0.6s reverse forwards;
+}
+</style>
