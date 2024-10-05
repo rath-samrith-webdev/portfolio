@@ -19,23 +19,41 @@
             {{ slotProps.item.status }}
           </template>
           <template #subtitle>
-            {{ slotProps.item.date }}
+            <div class="gap-2">
+              <Tag
+                v-if="slotProps.item.start"
+                :value="slotProps.item.start"
+                severity="info"
+                v-tooltip.left="'Start Date'"
+                icon="pi pi-calendar"
+                size="small"
+                class="mr-2"
+              />
+              <Tag
+                v-if="slotProps.item.end"
+                :value="slotProps.item.end"
+                severity="info"
+                v-tooltip.right="'End Date'"
+                icon="pi pi-calendar"
+                size="small"
+                class="mr-2"
+              />
+            </div>
           </template>
           <template #content>
             <img
               v-if="slotProps.item.image"
-              :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.item.image}`"
+              :src="slotProps.item.image"
               :alt="slotProps.item.name"
               width="200"
               class="shadow-sm"
             />
+            <div v-if="slotProps.item.skills.length" class="grid grid-cols-3">
+              <Chip />
+            </div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Inventore sed consequuntur error repudiandae numquam deserunt
-              quisquam repellat libero asperiores earum nam nobis, culpa ratione
-              quam perferendis esse, cupiditate neque quas!
+              {{ slotProps.item.details }}
             </p>
-            <Button label="Read more" text></Button>
           </template>
         </Card>
       </template>
@@ -52,29 +70,42 @@ export default {
     return {
       events: [
         {
-          status: "Ordered",
-          date: "15/10/2020 10:30",
-          icon: "pi pi-shopping-cart",
+          status: "Graduate High School",
+          start: "2019",
+          end: "2022",
+          icon: "pi pi-graduation-cap",
           color: "#9C27B0",
-          image: "game-controller.jpg",
+          image: "",
+          education: "General Ed",
+          skills: [
+            {
+              title: "",
+              icon: "",
+            },
+          ],
+          details: "I graduated from Tepranam high in 2022",
         },
         {
-          status: "Processing",
-          date: "15/10/2020 14:00",
-          icon: "pi pi-cog",
+          status: "Associate Degree",
+          start: "2022",
+          end: "Present",
+          icon: "pi pi-spin pi-cog",
           color: "#673AB7",
+          education: "General Ed",
+          skills: [],
+          details:
+            "I am currently majoring computer science under Passerelles Numeriques Cambodia Scholarship.",
         },
         {
-          status: "Shipped",
-          date: "15/10/2020 16:15",
-          icon: "pi pi-shopping-cart",
+          status: "Web development Intern",
+          start: "01/Aug/2024",
+          end: "Present",
+          icon: "pi pi-briefcase",
           color: "#FF9800",
-        },
-        {
-          status: "Delivered",
-          date: "16/10/2020 10:00",
-          icon: "pi pi-check",
-          color: "#607D8B",
+          education: "General Ed",
+          skills: [],
+          details:
+            "I am currently working as Intern in Sourceamax Asia as this also included as part of asociation degree.",
         },
       ],
     };
