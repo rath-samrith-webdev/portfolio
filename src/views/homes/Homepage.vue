@@ -5,15 +5,15 @@
         <h1
           class="text-4xl lg:text-6xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center lg:text-left"
         >
-          HELLO, MY NAME IS<br /><span class="text-blue-500 dark:text-blue-400"
-            >RATH SAMRITH</span
+          HELLO, MY NAME IS<br /><span
+            class="text-blue-500 dark:text-blue-400"
+            >{{ information.name }}</span
           >
         </h1>
         <p
           class="text-surface-700 dark:text-surface-200 leading-normal mb-8 text-center lg:text-left"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {{ information.breif }}
         </p>
         <div class="flex items-center justify-center lg:justify-start gap-6">
           <Button label="Learn More" type="button" @click="goToAbout"></Button>
@@ -29,7 +29,7 @@
       />
     </div>
   </div>
-  <div>
+  <div class="flex py-2 flex-col justify-center align-center">
     <h1
       class="text-3xl lg:text-4xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center"
     >
@@ -37,7 +37,7 @@
     </h1>
     <Technology />
   </div>
-  <div>
+  <div class="flex py-2 flex-col justify-center align-center">
     <h1
       class="text-3xl lg:text-4xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center"
     >
@@ -45,23 +45,37 @@
     </h1>
     <TimeLineComp />
   </div>
+  <div class="flex py-2 flex-col justify-center align-center">
+    <h1
+      class="text-3xl lg:text-4xl font-bold text-surface-900 dark:text-surface-0 mb-4 lg:leading-normal text-center"
+    >
+      MY PROJECTS
+    </h1>
+    <Projects />
+  </div>
 </template>
 
 <script>
 import TimeLineComp from "../../components/TimeLine.vue";
 import Technology from "../../components/Technology.vue";
+import Projects from "../../components/Projects.vue";
 import Card from "primevue/card";
 export default {
   name: "HomePage",
   data() {
     return {
-      events: ["2020", "2021", "2022", "2023"],
+      information: {
+        name: "RATH SAMRITH",
+        breif:
+          "I am a second year student from Passerells Numeriques Cambodia. I am currently working as intern.",
+      },
     };
   },
   components: {
     TimeLineComp,
     Card,
     Technology,
+    Projects,
   },
   methods: {
     async goToAbout() {
