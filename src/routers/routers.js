@@ -4,7 +4,7 @@ const routes = [
     label: "Home",
     path: "/",
     icon: "pi pi-home",
-    component: () => import("../views/homes/Homepage.vue"),
+    component: () => import("../views/home/Homepage.vue"),
   },
   {
     name: "About me",

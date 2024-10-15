@@ -1,6 +1,7 @@
 <script setup>
 import Menubar from "primevue/menubar";
 import routes from "./routers/routers";
+import SpeedDial from "primevue/speeddial";
 </script>
 
 <template>
