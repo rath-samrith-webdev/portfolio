@@ -17,7 +17,7 @@
         </p>
         <div class="flex items-center justify-center lg:justify-start gap-6">
           <Button label="Learn More" type="button" @click="goToAbout"></Button>
-          <Button label="Live Demo" type="button" outlined></Button>
+          <Button label="Download My Resume" type="button" outlined></Button>
         </div>
       </div>
     </div>

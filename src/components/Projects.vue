@@ -7,7 +7,7 @@
       </template>
       <template #title>Advanced Card</template>
       <template #subtitle>
-        <Chip label="HTMl" />
+        <Chip label="HTML" />
       </template>
     </Card>
     <Card>
@@ -16,16 +16,7 @@
       </template>
       <template #title>Advanced Card</template>
       <template #subtitle>
-        <Chip label="HTMl" />
-      </template>
-    </Card>
-    <Card>
-      <template #header>
-        <img alt="user header" src="../assets/vue.svg" />
-      </template>
-      <template #title>Advanced Card</template>
-      <template #subtitle>
-        <Chip label="HTMl" />
+        <Chip label="HTML" />
       </template>
     </Card>
   </div>

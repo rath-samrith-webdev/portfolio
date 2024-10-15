@@ -46,6 +46,11 @@ export default {
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg",
         },
         {
+          toolTip: "JS",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+        },
+        {
           toolTip: "Node JS",
           image:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
