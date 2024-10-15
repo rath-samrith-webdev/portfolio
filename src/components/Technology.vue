@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import Card from "primevue/card";
 import Avatar from "primevue/avatar";
 export default {
   name: "Technology",
@@ -89,7 +88,6 @@ export default {
     };
   },
   components: {
-    Card,
     Avatar,
   },
 };

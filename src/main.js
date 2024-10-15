@@ -11,6 +11,7 @@ import AnimateOnScroll from "primevue/animateonscroll";
 import Tooltip from "primevue/tooltip";
 import Chip from "primevue/chip";
 import Tag from "primevue/tag";
+import Card from "primevue/card";
 
 const app = createApp(App);
 app.use(router);
@@ -23,6 +24,7 @@ app.component("Button", Button);
 app.component("Message", Message);
 app.component("Chip", Chip);
 app.component("Tag", Tag);
+app.component("Card", Card);
 app.directive("animateonscroll", AnimateOnScroll);
 app.directive("tooltip", Tooltip);
 app.mount("#app");

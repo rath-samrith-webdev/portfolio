@@ -63,7 +63,6 @@
 
 <script>
 import Timeline from "primevue/timeline";
-import Card from "primevue/card";
 export default {
   name: "TimeLineComp",
   data() {
@@ -112,7 +111,6 @@ export default {
   },
   components: {
     Timeline,
-    Card,
   },
   methods: {
     findIndex(item) {
