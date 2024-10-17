@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import Card from "primevue/card";
 import Avatar from "primevue/avatar";
 export default {
   name: "Technology",
@@ -44,6 +43,11 @@ export default {
           toolTip: "JS",
           image:
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg",
+        },
+        {
+          toolTip: "JS",
+          image:
+            "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
         },
         {
           toolTip: "Node JS",
@@ -84,7 +88,6 @@ export default {
     };
   },
   components: {
-    Card,
     Avatar,
   },
 };
